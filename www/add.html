@@ -58,6 +58,8 @@
                                 </div>
 
                                 <input style="display:none;" type="text" id="imagebase64" />
+                                <input style="display:none;" type="text" id="latitude" />
+                                <input style="display:none;" type="text" id="longitude" />
                                 
         
                         <!-- </form> -->
@@ -97,6 +99,8 @@
                 var year = document.getElementById('year').value;
                 var plate = document.getElementById('plate').value;
                 var imagebase64 = document.getElementById('imagebase64').value;
+                var latitude = document.getElementById('latitude').value;
+                var longitude = document.getElementById('longitude').value;
 
                 alert(model);
                 alert(description);
@@ -105,6 +109,8 @@
                 alert(year);
                 alert(plate);
                 alert(imagebase64);
+                alert(latitude);
+                alert(longitude);
 
 
             });
@@ -138,7 +144,10 @@
         }
 
         function onSuccess(position) {
-            alert(position.coords);
+            var latitude = document.getElementById('latitude');
+            latitude.value = position.coords.latitude;
+            var longitude = document.getElementById('longitude');
+            longitude.value = position.coords.longitude;
         }
 
         function onError(error) {
