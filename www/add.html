@@ -102,15 +102,30 @@
                 var latitude = document.getElementById('latitude').value;
                 var longitude = document.getElementById('longitude').value;
 
-                alert(model);
-                alert(description);
-                alert(phoneNumber);
-                alert(price);
-                alert(year);
-                alert(plate);
-                alert(imagebase64);
-                alert(latitude);
-                alert(longitude);
+                var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
+                xmlhttp.open("POST", "https://blooming-reaches-52961.herokuapp.com/offers");
+                xmlhttp.setRequestHeader("Content-Type", "application/json");
+                xmlhttp.send(JSON.stringify({
+                    model:model,
+                    price:price,
+                    phoneNumber:phoneNumber,
+                    price:price,
+                    year:year,
+                    plate:plate,
+                    image:imagebase64,
+                    latitude:latitude,
+                    longitude:longitude
+                }));
+
+                // alert(model);
+                // alert(description);
+                // alert(phoneNumber);
+                // alert(price);
+                // alert(year);
+                // alert(plate);
+                // alert(imagebase64);
+                // alert(latitude);
+                // alert(longitude);
 
 
             });
