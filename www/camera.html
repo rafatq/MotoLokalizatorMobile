@@ -65,15 +65,16 @@
         function capturePhoto() {
 
             navigator.camera.getPicture(onPhotoDataSuccess, onFail, {
-                // quality: 350,
-                // allowEdit: true,
-                destinationType: Camera.DestinationType.FILE_URI 
+                quality: 350,
+                allowEdit: true,
+                destinationType: Camera.DestinationType.DATA_URL 
             });
         }
 
         function onPhotoDataSuccess(imageData) {
 
             alert('success');
+            alert(imageData);
             var smallImage = document.getElementById('smallImage');
 
             smallImage.style.display = 'block';
