@@ -1,5 +1,6 @@
-# Przeznaczenie aplikacji:
-    
+# MotoLokalizatorMobile
+
+## Przeznaczenie aplikacji:
       
 #### Aplikacja służy do gromadzenia danych o pojazdach będących w sprzedaży.
  
