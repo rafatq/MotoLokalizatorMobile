@@ -10,18 +10,52 @@
     <link rel="stylesheet" type="text/css" href="css/jquery.mmenu.all.css" />
     <link rel="stylesheet" type="text/css" href="css/demo.css" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
-    <title>Dodaj ogłoszenie</title>
+    <title>Podgląd</title>
 </head>
 
 <body>
     <div id="page">
         <div class="header">
             <a href="#menu"></a>
-            Dodaj ogłoszenie
+            
         </div>
         <div class="content">
-
-              DETAILS
+            <div class="row">
+                    <img id="photo"  class="img-responsive center-block" style="max-height: 300px"/>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <h4 id="title"></h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <h6 id="description"></h6>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3 id="price"></h3>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-xs-12">
+                    <h4>Geo:</h4>
+                    <a id="maps" href="#"/>
+                    <div class="row">
+                        <div class="col-xs-6 text-right"><h5 id="lat"></h5></div>
+                        <div class="col-xs-6 text-left"><h5 id="long"></h5></div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3 id="phone"></h3>
+                </div>
+            </div>
+                
         </div>
     </div>
 
@@ -40,7 +74,44 @@
       function onReady() {
             var str = window.location.hash.substr(1);
             var res = str.split("?");
-            alert(res[0]+","+res[1]);
+
+            var request = new XMLHttpRequest();
+            request.open("GET", "https://blooming-reaches-52961.herokuapp.com/offers/"+res[1], true);
+            request.onreadystatechange = function() {
+                if (request.readyState == 4) {
+                    if (request.status == 200 || request.status == 0) {
+                        $('#panel').hide();
+                        $('#status').html("In Progress.... Please Wait!");
+                        var text = "";
+                        var obj = JSON.parse(request.responseText);
+
+                        var image = document.getElementById('photo');
+                        image.src = "data:image/jpeg;base64," + obj.image;
+
+                        var title = document.getElementById('title');
+                        title.innerHTML = obj.model + ' (' + obj.year + ')';
+
+                        var description = document.getElementById('description');
+                        description.innerHTML = obj.description;
+
+                        var price = document.getElementById('price');
+                        price.innerHTML = obj.price + "PLN";
+
+                        var lat = document.getElementById('lat');
+                        lat.innerHTML = obj.latitude ;
+
+                        var long = document.getElementById('long');
+                        long.innerHTML = obj.longitude ;
+
+                        var phone = document.getElementById('phone');
+                        phone.innerHTML = "Tel: " + obj.phoneNumber ;
+
+                        var mapsLink = document.getElementById('maps');
+                        mapsLink.href = 'https://www.google.pl/maps/dir/'+obj.latitude+','+obj.longitude;
+                    }
+                }
+            }
+            request.send();
         }
 
      
