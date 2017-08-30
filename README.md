@@ -1,8 +1,10 @@
 # MotoLokalizatorMobile
 
+
 ## Przeznaczenie aplikacji:
-      
-#### Aplikacja służy do gromadzenia danych o pojazdach będących w sprzedaży.
+   
+   
+##### Aplikacja służy do gromadzenia danych o pojazdach będących w sprzedaży.
  
 ## Opis:
 Obecnie ogromna ilość pojazdów oferowanych jest do sprzedaży za pośrednictwem Internetu. Portale aukcyjne pękają w szwach od ofert, jednak bardzo duży odsetek samochodów, motocykli czy też innych pojazdów oferowanych jest metodą „konwencjonalną” (giełdy, głoszenia w prasie, „poczta pantoflowa”). Nie każdy przecież wykorzystuje Internet do sprzedaży (z różnych względów: brak zaufania do zakupów w sieci, brak czasu na przygotowania ofert sprzedaży lub po prostu nie korzysta z Internetu).
