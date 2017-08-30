@@ -78,7 +78,6 @@
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/fastclick.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCA78HE2ml5qFNokjaoo3y0r-z0HePnhSE"></script> -->
     
 
     <script type="text/javascript">
@@ -108,6 +107,7 @@
                 xmlhttp.send(JSON.stringify({
                     model:model,
                     price:price,
+                    description:description,
                     phoneNumber:phoneNumber,
                     price:price,
                     year:year,
@@ -117,16 +117,17 @@
                     longitude:longitude
                 }));
 
-                // alert(model);
-                // alert(description);
-                // alert(phoneNumber);
-                // alert(price);
-                // alert(year);
-                // alert(plate);
-                // alert(imagebase64);
-                // alert(latitude);
-                // alert(longitude);
 
+                document.getElementById('model').value = null;
+                document.getElementById('description').value = null;
+                document.getElementById('phoneNumber').value = null;
+                document.getElementById('year').value = null;
+                document.getElementById('price').value = null;
+                document.getElementById('plate').value = null;
+                document.getElementById('model').value = null;
+                document.getElementById('smallImage').style.display = "none"
+
+                alert('Oferta dodana');
 
             });
 
@@ -140,8 +141,6 @@
 
         function onPhotoDataSuccess(imageData) {
 
-            alert('success');
-            alert(imageData);
             var smallImage = document.getElementById('smallImage');
             var hiddenImage = document.getElementById('imagebase64');
             hiddenImage.value = imageData;
