@@ -6,7 +6,7 @@
 
                $("#menu").mmenu({
                    "header": {
-                       "title": "PhoneGap Demo Menu",
+                       "title": "MotoLokalizator",
                        "add": true,
                        "update": true
                    }
