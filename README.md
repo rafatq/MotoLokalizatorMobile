@@ -1,5 +1,5 @@
 # MotoLokalizatorMobile 
-#   
+  
 
 ## Przeznaczenie aplikacji:
    
