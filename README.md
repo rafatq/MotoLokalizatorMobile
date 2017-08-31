@@ -1,6 +1,6 @@
 # MotoLokalizatorMobile 
   
-![LOGO](https://hostmat.eu/images/77644244311302495892.png)
+![LOGO](https://hostmat.eu/images/77644244311302495892.png)![QR](https://hostmat.eu/images/77644244311302495892.png)
 ## Przeznaczenie aplikacji:
    
    
