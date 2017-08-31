@@ -110,6 +110,13 @@
                 var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
                 xmlhttp.open("POST", "https://blooming-reaches-52961.herokuapp.com/offers");
                 xmlhttp.setRequestHeader("Content-Type", "application/json");
+                request.onreadystatechange = function() {
+                    if (request.readyState == 4) {
+                        if (request.status == 200 || request.status == 0) {
+                            alert('Oferta dodana');
+                        }
+                    }
+                }
                 xmlhttp.send(JSON.stringify({
                     model:model,
                     price:price,
@@ -133,7 +140,6 @@
                 document.getElementById('model').value = null;
                 document.getElementById('smallImage').style.display = "none"
 
-                alert('Oferta dodana');
 
             });
 
