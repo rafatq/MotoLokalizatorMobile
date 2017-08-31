@@ -21,27 +21,32 @@
         </div>
         <div class="content">
             <div class="row">
-                    <img id="photo"  class="img-responsive center-block" style="max-height: 300px"/>
+                    <img id="photo"  class="img-responsive center-block" style="max-height: 500px"/>
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <h4 id="title"></h4>
+                    <h2 id="title"></h4>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <h6 id="description"></h6>
+                    <h4 id="description"></h6>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <h3 id="price"></h3>
+                    <h4 id="plate"></h6>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 id="price"></h3>
                 </div>
             </div>
             <hr>
             <div class="row">
                 <div class="col-xs-12">
-                    <h4>Geo:</h4>
+                    <h2>Geo:</h4>
                     <a id="maps" href="#"/>
                     <div class="row">
                         <div class="col-xs-6 text-right"><h5 id="lat"></h5></div>
@@ -52,7 +57,7 @@
             <hr>
             <div class="row">
                 <div class="col-lg-12">
-                    <h3 id="phone"></h3>
+                    <h1 id="phone"></h3>
                 </div>
             </div>
                 
@@ -105,6 +110,9 @@
 
                         var phone = document.getElementById('phone');
                         phone.innerHTML = "Tel: " + obj.phoneNumber ;
+
+                        var phone = document.getElementById('plate');
+                        plate.innerHTML = "Numer Rejestracyjny: " + obj.plate ;
 
                         var mapsLink = document.getElementById('maps');
                         mapsLink.href = 'https://www.google.pl/maps/dir/'+obj.latitude+','+obj.longitude;
